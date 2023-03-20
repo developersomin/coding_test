@@ -34,7 +34,5 @@ public class Postfix04 {
         String s = sc.next();
 
         System.out.println(postfix04.solution(s));
-
-
     }
 }
