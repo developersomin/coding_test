@@ -13,7 +13,6 @@ public class Bfs7 {
         int level=0;
 
         while (!queue.isEmpty()) {
-            System.out.print(level+": ");
             int length = queue.size();
             for (int i = 0; i < length; i++) {
                 Node cur = queue.poll();
@@ -39,8 +38,6 @@ public class Bfs7 {
         tree.root.rt = new Node(3);
         tree.root.lt.lt = new Node(4);
         tree.root.lt.rt = new Node(5);
-        tree.root.rt.lt = new Node(6);
-        tree.root.rt.rt = new Node(7);
         tree.BFS(tree.root);
 
     }

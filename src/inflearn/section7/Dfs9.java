@@ -1,22 +1,20 @@
 package inflearn.section7;
 
 
-public class Dfs5 {
+public class Dfs9 {
     Node root;
 
-    public void DFS(Node root) {
-        if (root == null) {
-            return;
+    public int DFS(int level, Node root) {
+        if (root.lt == null && root.rt == null) {
+            return level;
         } else {
-            DFS(root.lt);
-            DFS(root.rt);
-            System.out.print(root.data + " ");
+            return Math.min(DFS(level+1, root.lt), DFS(level+1, root.rt));
         }
     }
 
 
     public static void main(String[] args) {
-        Dfs5 tree = new Dfs5();
+        Dfs9 tree = new Dfs9();
         tree.root = new Node(1);
         tree.root.lt = new Node(2);
         tree.root.rt = new Node(3);
@@ -24,7 +22,7 @@ public class Dfs5 {
         tree.root.lt.rt = new Node(5);
         tree.root.rt.lt = new Node(6);
         tree.root.rt.rt = new Node(7);
-        tree.DFS(tree.root);
+        tree.DFS(0,tree.root);
 
     }
 }
