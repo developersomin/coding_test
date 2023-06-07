@@ -30,21 +30,23 @@ public class B1913 {
             }
         }
         int x = Integer.parseInt(br.readLine());
+        StringBuilder sb = new StringBuilder();
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
-                System.out.print(arr[i][j]+" ");
+                sb.append(arr[i][j] + " ");
             }
-            System.out.println();
+            sb.append('\n');
         }
 
         for (int i = 0; i < n; i++) {
             for (int j = 0; j < n; j++) {
                 if (arr[i][j] == x) {
-                    System.out.println((i+1)+" "+(j+1));
+                    sb.append((i+1)+" "+(j+1));
                     break;
                 }
             }
         }
+        System.out.println(sb.toString());
         br.close();
     }
 
